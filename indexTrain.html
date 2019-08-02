@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  ​ ​
+  <head>
+    <title>Liverpool Street Station</title>
+    <meta charset="UTF-8" />
+
+    // adding links to bootstrap, jquery, firebase-app and firebase-database
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  </head>
+  // create body // card to hold the train Timetable
+
+  <body class="container">
+    <div class="row">
+      <div class="jumbotron col-md-12">
+        <h1 class="display-4">Liverpool Street Station</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card col-md-12 px-0 mb-3">
+        <div class="card-header">
+          Current Train Timetable
+        </div>
+        <div class="card-body" id="trainTable">
+          ​
+          <table class="col-md-12">
+            <thead>
+              <tr>
+                // table header
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (mins)</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+
+            // table body to reference using "tableBody" the rows to add from
+            the new train form
+
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    // card to hold the input fields of train name, destination, the first train
+    time and the train frequency
+
+    <div class="row">
+      <div class="card col-md-12 px-0">
+        <div class="card-header">
+          Add Train
+        </div>
+        <div class="card-body">
+          <form id="trainName">
+            <div class="form-group">
+              <label for="trainName">Train Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="trainName"
+                placeholder="Scottish Flyer"
+              />
+            </div>
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <input
+                type="text"
+                class="form-control"
+                id="destination"
+                placeholder="Paddington"
+              />
+            </div>
+            <div class="form-group">
+              <label for="NextTrain">First Train Time (HH:mm 24hr time)</label>
+              <input
+                type="time"
+                class="form-control"
+                id="NextTrain"
+                placeholder="05:30"
+              />
+            </div>
+            <div class="form-group">
+              <label for="frequency">Frequency</label>
+              <input
+                type="number"
+                class="form-control"
+                id="frequency"
+                placeholder="5"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  ​ ​
+</html>
